@@ -47,6 +47,12 @@ async function run() {
         const orderCollection = client.db("motorServices").collection("order");
 
 
+
+        //heroku deploy test
+        app.get('/hero', (req, res) => {
+            res.send('THere is no hero')
+        })
+
         //auth jwt token
         app.post('/login', async (req, res) => {
             const user = req.body
@@ -55,6 +61,7 @@ async function run() {
             })
             res.send({ accessToken })
         })
+
 
 
 
